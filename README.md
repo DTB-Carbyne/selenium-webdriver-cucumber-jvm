@@ -1,22 +1,22 @@
 # Welcome to the farmdrop technical test for automation testers
 
-Please spend no more than two hours on the following task. You are not expected to finish all of it - this is as much to understand how you approach things as it is to see if you can build working tests.
+# Prerequisites
 
-## Background
-Farmdrop sometimes uses a staging site at [https://staging-web.farmdrop.com](https://staging-web.farmdrop.com) to run integration tests.  The database is reset periodically and the payments system is connected to a sandbox, so you can experiment freely.
+Download the latest release of `Chrome Driver` [here](http://chromedriver.chromium.org/downloads) for your Linux and Mac system and install it in your `$HOME` directory.
 
-## Task
-Please build a suite of tests for the sign up form which will run against this staging site.
+## Set an environment variable for your system
 
-1. Write out a series of scenarios as a Cucumber feature file(s). Try to think from regression prospective and come up with as many scenarios as you feel are appropriate in order to make sure this form is fully tested.
-2. Begin to automate your scenarios and continue until your allocated time runs out. Use Cucumber/Ruby and any other gems/frameworks you feel are appropriate.
+You should specify what browser you would like to run the tests on by setting it up in an environment variable that the `setUp()` method will read. Currently, only Chrome is defined but any other can be specified if the correct web drivers are installed and defined.
 
-## Notes
-* Code reuse is important to us, so we are interested in seeing what approaches you take to keep your code and tests modular.
-* Can you show an approach to handle multiple browsers(headless,chrome should do) as well.
-* Your submission should include instructions on how to run it.
+For Linux and Mac, enter the following in your terminal:
 
-## Submission
-Please fork this repository and commit code to it. Send us the link to your repo in an email.
+`export browserName=Chrome`
 
-Good Luck!!!
+# Run tests
+Clean and run with default settings:
+
+`mvn clean test`
+
+Clean and run with another browser:
+
+`mvn clean test -D browserName=<browser-name>`
