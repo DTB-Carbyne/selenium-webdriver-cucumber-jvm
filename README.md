@@ -1,4 +1,4 @@
-# Welcome to the farmdrop technical test for automation testers
+# Selenium WebDriver and Cucumber-JVM Example Automation Framework
 
 # Prerequisites
 
